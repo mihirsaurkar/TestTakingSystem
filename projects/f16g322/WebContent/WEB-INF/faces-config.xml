@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+<managed-bean>
+		
+	<managed-bean-name>DBaseBean</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.model.DBaseBean</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+		
+	<managed-property>
+			
+		<property-name>dbmsUserBean</property-name>
+			
+		<property-class>edu.uic.ids517.model.DbmsUserBean</property-class>
+				
+		<value>#{dbmsUserBean}</value>
+		
+	</managed-property>
+		
+	<managed-property>
+			
+		<property-name>messageBean</property-name>
+			
+		<property-class>edu.uic.ids517.model.MessageBean</property-class>
+			
+		<value>#{messageBean}</value>
+		
+	</managed-property>
+	
+</managed-bean>
+
+<managed-bean>
+		
+	<managed-bean-name>DbmsUserBean</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.model.DbmsUserBean</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+	
+</managed-bean>
+
+<managed-bean>
+		
+	<managed-bean-name>MessageBean</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.model.MessageBean</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+		
+	<managed-property>
+			
+		<property-name>responseMessage</property-name>
+			
+		<property-class>java.lang.String</property-class>
+			
+		<value></value>
+		
+	</managed-property>
+		
+	<managed-property>
+			
+		<property-name>errorMessage</property-name>
+			
+		<property-class>java.lang.String</property-class>
+			
+		<value></value>
+		
+	</managed-property>
+	
+</managed-bean>
+
+<managed-bean>
+		
+	<managed-bean-name>actionBeanLoginLogout</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.actionBean.ActionBeanLoginLogout</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+	
+</managed-bean>
+
+<managed-bean>
+	
+	<managed-bean-name>actionBeanDatabaseAccess</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.actionBean.ActionBeanDatabaseAccess</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+	
+</managed-bean>
+
+<managed-bean>
+		
+	<managed-bean-name>user</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.model.User</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+	
+</managed-bean>
+<managed-bean>
+		
+	<managed-bean-name>ActionBeanImport</managed-bean-name>
+		
+	<managed-bean-class>edu.uic.ids517.actionBean.ActionBeanImport</managed-bean-class>
+		
+	<managed-bean-scope>session</managed-bean-scope>
+	
+</managed-bean>
+
+<navigation-rule>
+		
+		<display-name>dblogin</display-name>
+		
+		<from-view-id>/dblogin.jsp</from-view-id>
+		
+		<navigation-case>
+		
+			<from-outcome>SUCCESS</from-outcome>
+		
+			<to-view-id>/userLogin.jsp</to-view-id>
+		
+		</navigation-case>
+
+</navigation-rule>
+
+<navigation-rule>
+
+		<display-name>userLogin</display-name>
+
+		<from-view-id>/userLogin.jsp</from-view-id>
+
+		<navigation-case>
+
+			<from-outcome>SUCCESS</from-outcome>
+
+			<to-view-id>/mainMenu.jsp</to-view-id>
+
+		</navigation-case>
+
+</navigation-rule>
+
+<navigation-rule>
+		
+		<display-name>logout</display-name>
+		
+		<from-view-id>/logout.jsp</from-view-id>
+		
+		<navigation-case>
+		
+			<from-outcome>SUCCESS</from-outcome>
+		
+			<to-view-id>/dblogin.jsp</to-view-id>
+		
+		</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+		
+		<display-name>index</display-name>
+		
+		<from-view-id>/index.jsp</from-view-id>
+		
+		<navigation-case>
+		
+			<from-outcome>SUCCESS</from-outcome>
+		
+			<to-view-id>/dblogin.jsp</to-view-id>
+		
+		</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+		
+		<display-name>test</display-name>
+		
+		<from-view-id>/test.jsp</from-view-id>
+		
+		<navigation-case>
+		
+			<from-outcome>SUCCESS</from-outcome>
+		
+			<to-view-id>/takeTest.jsp</to-view-id>
+		
+		</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+		
+		<display-name>takeTest</display-name>
+		
+		<from-view-id>/takeTest.jsp</from-view-id>
+		
+		<navigation-case>
+		
+			<from-outcome>SUCCESS</from-outcome>
+		
+			<to-view-id>/test.jsp</to-view-id>
+		
+		</navigation-case>
+		
+</navigation-rule>
+
+
+</faces-config>
+
